@@ -24,11 +24,14 @@ jobs:
     - name: 🛠️ Build Angular app
       run: npm run build -- --configuration=production
 
-    - name: 📤 Deploy via FTP to All-Inkl
+    - name: 📤 FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: dist/thynkris-frontend/browser/
+        local-dir: dist/thynkris/
         server-dir: /thynkris.com/
+        protocol: ftps
+        port: 21
+        passive: true
