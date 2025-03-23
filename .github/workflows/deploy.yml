@@ -24,11 +24,13 @@ jobs:
     - name: 🛠️ Build Angular app
       run: npm run build -- --configuration=production
 
-    - name: 📤 FTP Deploy
-      uses: sebastianpopp/ftp-action@v1.1.0
+    - name: 📤 Clean Deploy via FTP
+      uses: kamranayub/ftp-deploy-action@v4.3.1
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: dist/thynkris-frontend/browser/
-        remoteDir: /
+        local-dir: dist/thynkris-frontend/browser/
+        server-dir: /
+        cleanup: true 
+
