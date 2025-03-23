@@ -24,13 +24,13 @@ jobs:
     - name: 🛠️ Build Angular app
       run: npm run build -- --configuration=production
 
-    - name: 📤 Clean Deploy via FTP
-      uses: kamranayub/ftp-deploy-action@v1.0.2
+    - name: 📤 Clean Deploy with SamKirkland FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: dist/thynkris-frontend/browser/
         server-dir: /
-        cleanup: true 
+        dangerous-clean-slate: true
 
