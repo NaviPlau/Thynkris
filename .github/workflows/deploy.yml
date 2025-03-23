@@ -33,4 +33,6 @@ jobs:
         local-dir: dist/thynkris-frontend/browser/
         server-dir: /
         dangerous-clean-slate: true
+        exclude: |
+          **/.ftp-deploy-sync-state.json
 
