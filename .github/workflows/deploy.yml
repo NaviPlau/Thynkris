@@ -27,7 +27,7 @@ jobs:
     - name: 📤 FTP Deploy
       uses: sebastianpopp/ftp-action@v1.1.0
       with:
-        server: ${{ secrets.FTP_SERVER }}
+        host: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         localDir: dist/thynkris-frontend/browser/
