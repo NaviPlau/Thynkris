@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@use "app/shared/styles/mixins" as *;
+
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-text-base);
+}
+
+button {
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--color-btn-shadow, rgba(0, 0, 0, 0.1));
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: var(--color-btn-hover-bg);
+  }
+
+  &:disabled {
+    background: var(--color-btn-disabled-bg);
+    color: var(--color-btn-disabled-text);
+    border: 1px solid var(--color-btn-disabled-border);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &.secondary {
+    background: var(--color-btn-secondary-bg);
+    color: var(--color-btn-secondary-text);
+
+    &:hover {
+      background: var(--color-btn-secondary-hover-bg);
+    }
+  }
+}

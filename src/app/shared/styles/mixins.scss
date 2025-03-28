@@ -1,0 +1,100 @@
+@mixin display($display: flex,$flex-direction: row, $justify-content: center, $align-items: center ) {
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  display: $display;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+
+  @if $top != null {
+    top: $top;
+  }
+  @if $right != null {
+    right: $right;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+  @if $left != null {
+    left: $left;
+  }
+}
+
+@mixin elipsis($width: null, $lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @if $width != null {
+      width: $width;
+      max-width: $width;
+    }
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+
+    @if $width != null {
+      width: $width;
+      max-width: $width;
+    }
+  }
+}
+
+
+
+:root {
+  --color-bg-body: #F5F7FA;
+  --color-bg-surface: #FFFFFF;
+
+  --color-text-base: #1A1A1A;
+  --color-text-muted: #4F4F4F;
+
+  --color-border-default: #D1D5DB;
+
+  /* Primary button (gradient in light) */
+  --color-btn-bg: linear-gradient(90deg, #FF914D, #FFD600);
+  --color-btn-hover-bg: linear-gradient(90deg, #FF7E2D, #FFC700);
+  --color-btn-text: #1A1A1A;
+
+  /* Flat/frosted button for dark mode base */
+  --color-btn-secondary-bg: #F3F3F6;
+  --color-btn-secondary-hover-bg: #EAEAEA;
+  --color-btn-secondary-text: #1A1A1A;
+
+  /* Disabled */
+  --color-btn-disabled-bg: #E0E0E0;
+  --color-btn-disabled-text: #9E9E9E;
+  --color-btn-disabled-border: #CCCCCC;
+}
+
+:root.dark-theme {
+  --color-bg-body: #0D1117;
+  --color-bg-surface: #161B22;
+
+  --color-text-base: #E6EDF3;
+  --color-text-muted: #A5B1C2;
+
+  --color-border-default: #30363D;
+
+  /* Primary button for dark (no gradient) */
+  --color-btn-bg: linear-gradient(90deg, #1ABC9C, #2EA043);
+  --color-btn-hover-bg: linear-gradient(90deg, #16A085, #238636);
+  --color-btn-text: #FFFFFF;
+
+  /* Secondary "Über uns" button style */
+  --color-btn-secondary-bg: #1E1E1E;
+  --color-btn-secondary-hover-bg: #2A2A2A;
+  --color-btn-secondary-text: #E6EDF3;
+
+  /* Disabled */
+  --color-btn-disabled-bg: #2A2A2A;
+  --color-btn-disabled-text: #6B6B6B;
+  --color-btn-disabled-border: #3A3A3A;
+}
+
