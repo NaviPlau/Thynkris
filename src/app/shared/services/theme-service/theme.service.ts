@@ -6,9 +6,7 @@ import { Injectable } from '@angular/core';
 export class ThemeService {
   storageKey = 'user-theme';
   root = document.documentElement;
-  constructor() {
-    this.initTheme();
-  }
+  constructor() {}
 
   initTheme(): void {
     let savedTheme = localStorage.getItem(this.storageKey);
