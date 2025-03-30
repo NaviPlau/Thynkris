@@ -4,12 +4,12 @@
     <form action="" onsubmit="return false">
       <h1>Login</h1>
       <div class="form-field">
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required placeholder="Email">
         <mat-icon>email</mat-icon>
       </div>
 
       <div class="form-field">
-        <input  [type]="passVisible() ? 'text' : 'password'"  id="password" name="password" required>
+        <input  [type]="passVisible() ? 'text' : 'password'"  id="password" name="password" required  placeholder="Password">
         <mat-icon class="c-pointer" (click)="togglePassVisible()">
           @if(passVisible()){
             visibility_off
@@ -19,7 +19,7 @@
         </mat-icon>
       </div>
         <button>Sign in</button>
-        <a href="">Forgot your password?</a>
+        <a class="c-pointer" (click)="navigator.navigateTo('forgot-password')">Forgot your password?</a>
      
     </form>
   </content>

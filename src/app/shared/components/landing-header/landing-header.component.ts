@@ -1,5 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject} from '@angular/core';
+import { NavigatorService } from '../../services/navigator/navigator.service';
 
 @Component({
   selector: 'app-landing-header',
@@ -9,11 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './landing-header.component.scss'
 })
 export class LandingHeaderComponent {
-  router = inject(Router);
-  actualRoute = signal('')
-
-
-  constructor() {
-    this.actualRoute.set(this.router.url);
-  }
+  navigator = inject(NavigatorService)
+  constructor() {}
 }
