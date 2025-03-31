@@ -4,11 +4,15 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  
+  loginData = signal({});
 
 
   constructor() { }
 
+  loginUser(){
+    console.log(this.loginData());
+    
+  }
   
 
   

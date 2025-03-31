@@ -11,7 +11,7 @@ content{
 
 form{
   @include display(flex, column, center, center);
-  gap: 20px;
+  gap: 40px;
   background-color: var(--color-bg-surface);
   padding: 40px;
   border-radius: 20px;
@@ -57,9 +57,17 @@ mat-icon {
       color: var(--color-icon-focus);
     }
   }
+  position: relative;
 }
 
 .name-field{
   @include display(flex, row, center, center);
   gap: 20px;
+}
+
+small{
+  color: var(--color-error-message);
+  font-size: 14px;
+  position: absolute;
+  top: 100%;
 }

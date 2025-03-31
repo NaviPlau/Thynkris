@@ -56,7 +56,6 @@ button {
     color: var(--color-btn-disabled-text);
     border: 1px solid var(--color-btn-disabled-border);
     cursor: not-allowed;
-    pointer-events: none;
   }
 
   &.secondary {
